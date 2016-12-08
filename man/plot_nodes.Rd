@@ -4,7 +4,7 @@
 \alias{plot_nodes}
 \title{plot_nodes}
 \usage{
-plot_nodes(x, y, cex = 0.2, a = 13, h = 1, w = 1)
+plot_nodes(x, y, cex = 0.2, h = 1, w = 1, ...)
 }
 \arguments{
 \item{x}{Vector of x coords with recommended min/max of
@@ -15,11 +15,11 @@ plot_nodes(x, y, cex = 0.2, a = 13, h = 1, w = 1)
 
 \item{cex}{Size of nodes defaults to .2}
 
-\item{a}{Something to do with color manipulation.}
-
 \item{h}{height of plot defaults to 1.}
 
 \item{w}{width of plot defaults to 1.}
+
+\item{\dots}{Other args passed on to symbols().}
 }
 \value{
 Node diagram

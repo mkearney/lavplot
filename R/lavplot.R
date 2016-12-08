@@ -1,3 +1,10 @@
+plot_blank <- function(w, h) {
+    par(mar=c(0, 0, 0, 0))
+    plot(1, type = "n", bty = "n",
+         axes = FALSE, xlab = "", ylab = "",
+         xlim = c(-w, w), ylim = c(-h, h),
+         asp = 1)
+}
 
 #' plot_nodes
 #'
@@ -6,9 +13,9 @@
 #' @param y Vector of y coords with recommended min/max of
 #'   -.75 to .75.
 #' @param cex Size of nodes defaults to .2
-#' @param a Something to do with color manipulation.
 #' @param h height of plot defaults to 1.
 #' @param w width of plot defaults to 1.
+#' @param \dots Other args passed on to symbols().
 #' @return Node diagram
 #' @examples
 #' cex <- .25
@@ -38,14 +45,14 @@
 #' text(0, .5, "w")
 #' text(1.5, -.5, "y")
 #' @export
-plot_nodes <- function(x, y, cex = .2, a = 13, h = 1, w = 1) {
+plot_nodes <- function(x, y, cex = .2, h = 1, w = 1, ...) {
     plot_blank(w, h)
     xs <- x
     ys <- y
     if (identical(length(cex), 1L)) cex <- rep(cex, length(x))
     sizes <- cex
-    symbols(xs, ys, circles = sizes, bg = "#00000011",
-            fg = "black", inches = FALSE, add = TRUE)    
+    symbols(xs, ys, circles = sizes, bg = "#e5e5e5",
+            fg = "#333333", inches = FALSE, add = TRUE, ...)   
 }
 
 prsq <- function(r) 1.05 * pi * r^2

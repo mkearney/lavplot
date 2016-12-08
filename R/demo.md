@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+
+
+
+## install and load package
+
+
+
+```r
+install.packages("devtools")
+devtools::install_github("mkearney/lavplot")
+library(lavplot)
+```
+
+
+
+
+
+## draw the plot
+
+
+
+```r
+## plot nodes with grid background
+plot_nodes(c(-.75, 0, .75), c(-.5, .5, -.5),
+           panel.first = grid(8))
+
+## draw arrows
+draw.arrow(-.75, -.50, .00,  .50)
+draw.arrow( .00,  .50, .75, -.50)
+draw.arrow(-.75, -.50, .75, -.50)
+
+## add coefficients
+text(-.45, .00, ".25")
+text( .45,  .00, ".33")
+text( .00, -.55, "-.15")
+
+## add var names
+text(-.75, -.50, "X")
+text( .00,  .50, "W")
+text( .75, -.50, "Y")
+```
+
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+
