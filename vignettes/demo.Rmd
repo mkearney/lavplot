@@ -47,3 +47,5 @@ text( .00,  .50, "W")
 text( .75, -.50, "Y")
 ```
 
+
+![](demo_files/figure-markdown_github/unnamed-chunk-3-1.png)
